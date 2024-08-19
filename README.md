@@ -265,7 +265,7 @@ FROM
 
 ```
 
-**Output** 100 Rows ✔️
+**Output:** 100 Rows ✔️
 
 
 
@@ -284,7 +284,7 @@ FROM
 WHERE
     TABLE_NAME = 'view_uk_youtubers_2024'
 ```
-**Output** 4 Columns ✔️
+**Output:** 4 Columns ✔️
 
 
 ## Data type check
@@ -303,7 +303,7 @@ FROM
 WHERE
     TABLE_NAME = 'view_uk_youtubers_2024';
 ```
-**Output** channel_name = varchar / total_subs = int / total_views = bigint / total_vids = int
+**Output:** channel_name = varchar / total_subs = int / total_views = bigint / total_vids = int ✔️
 
 
 ## Duplicate count check
@@ -330,63 +330,41 @@ GROUP BY
 HAVING
     COUNT(*) > 1;
 ```
-### Output
-![Duplicate count check](assets/images/4_duplicate_records_check.png)
+**Output:** No duplicates ✔️
 
-# Visualization 
+
+# Visualisation 
 
 
 ## Results
 
 - What does the dashboard look like?
 
-![GIF of Power BI Dashboard](assets/images/top_uk_youtubers_2024.gif)
+![GIF of Looker Dashboard](assets/images/ScreenRecording2024-08-18at11.25.37-ezgif.com)
 
 This shows the Top UK Youtubers in 2024 so far. 
 
 
-## DAX Measures
+## Looker Table Calculations
 
 ### 1. Total Subscribers (M)
 ```sql
 Total Subscribers (M) = 
-VAR million = 1000000
-VAR sumOfSubscribers = SUM(view_uk_youtubers_2024[total_subscribers])
-VAR totalSubscribers = DIVIDE(sumOfSubscribers,million)
-
-RETURN totalSubscribers
+total_subscribers/1000000
 
 ```
 
 ### 2. Total Views (B)
 ```sql
-Total Views (B) = 
-VAR billion = 1000000000
-VAR sumOfTotalViews = SUM(view_uk_youtubers_2024[total_views])
-VAR totalViews = ROUND(sumOfTotalViews / billion, 2)
-
-RETURN totalViews
+total_views/1000000000
 
 ```
 
-### 3. Total Videos
-```sql
-Total Videos = 
-VAR totalVideos = SUM(view_uk_youtubers_2024[total_videos])
-
-RETURN totalVideos
-
-```
 
 ### 4. Average Views Per Video (M)
 ```sql
 Average Views per Video (M) = 
-VAR sumOfTotalViews = SUM(view_uk_youtubers_2024[total_views])
-VAR sumOfTotalVideos = SUM(view_uk_youtubers_2024[total_videos])
-VAR  avgViewsPerVideo = DIVIDE(sumOfTotalViews,sumOfTotalVideos, BLANK())
-VAR finalAvgViewsPerVideo = DIVIDE(avgViewsPerVideo, 1000000, BLANK())
-
-RETURN finalAvgViewsPerVideo 
+IF(total_videos > 0, (total_views / total_videos) / 1000000, NULL)
 
 ```
 
@@ -394,23 +372,14 @@ RETURN finalAvgViewsPerVideo
 ### 5. Subscriber Engagement Rate
 ```sql
 Subscriber Engagement Rate = 
-VAR sumOfTotalSubscribers = SUM(view_uk_youtubers_2024[total_subscribers])
-VAR sumOfTotalVideos = SUM(view_uk_youtubers_2024[total_videos])
-VAR subscriberEngRate = DIVIDE(sumOfTotalSubscribers, sumOfTotalVideos, BLANK())
-
-RETURN subscriberEngRate 
+SUM(total_subscribers) / SUM(total_videos)
 
 ```
 
 
 ### 6. Views per subscriber
 ```sql
-Views Per Subscriber = 
-VAR sumOfTotalViews = SUM(view_uk_youtubers_2024[total_views])
-VAR sumOfTotalSubscribers = SUM(view_uk_youtubers_2024[total_subscribers])
-VAR viewsPerSubscriber = DIVIDE(sumOfTotalViews, sumOfTotalSubscribers, BLANK())
-
-RETURN viewsPerSubscriber 
+SUM(total_views)/SUM(total_subscribers)
 
 ```
 
@@ -438,25 +407,25 @@ Here are the key questions we need to answer for our marketing client:
 
 | Rank | Channel Name         | Subscribers (M) |
 |------|----------------------|-----------------|
-| 1    | NoCopyrightSounds    | 33.60           |
-| 2    | DanTDM               | 28.60           |
-| 3    | Dan Rhodes           | 26.50           |
-| 4    | Miss Katy            | 24.50           |
-| 5    | Mister Max           | 24.40           |
+| 1    | NoCopyrightSounds    | 33.70           |
+| 2    | DanTDM               | 28.90           |
+| 3    | Dan Rhodes           | 27.10           |
+| 4    | Miss Katy            | 24.90           |
+| 5    | Mister Max           | 24.60           |
 | 6    | KSI                  | 24.10           |
-| 7    | Jelly                | 23.50           |
-| 8    | Dua Lipa             | 23.30           |
-| 9    | Sidemen              | 21.00           |
-| 10   | Ali-A                | 18.90           |
+| 7    | Dua Lipa             | 23.70           |
+| 8    | Jelly                | 23.60           |
+| 9    | Sidemen              | 21.60           |
+| 10   | Mrwhosetheboss       | 19.20           |
 
 
-### 2. Which 3 channels have uploaded the most videos?
+### 2. Which 3 channels have uploaded the most videos (excluding news channels)?
 
 | Rank | Channel Name    | Videos Uploaded |
 |------|-----------------|-----------------|
-| 1    | GRM Daily       | 14,696          |
-| 2    | Manchester City | 8,248           |
-| 3    | Yogscast        | 6,435           |
+| 1    | GRM Daily       | 15,021          |
+| 2    | Manchester City | 8,503           |
+| 3    | Liverpool FC    | 6,772           |
 
 
 
@@ -474,18 +443,18 @@ Here are the key questions we need to answer for our marketing client:
 
 | Channel Name | Averge Views per Video (M) |
 |--------------|-----------------|
-| Mark Ronson  | 32.27           |
-| Jessie J     | 5.97            |
-| Dua Lipa     | 5.76            |
+| Mark Ronson  | 332.69          |
+| Jessie J     | 60.98           |
+| Dua Lipa     | 4.80            |
 
 
 ### 5. Which 3 channels have the highest views per subscriber ratio?
 
 | Rank | Channel Name       | Views per Subscriber        |
 |------|-----------------   |---------------------------- |
-| 1    | GRM Daily          | 1185.79                     |
-| 2    | Nickelodeon        | 1061.04                     |
-| 3    | Disney Junior UK   | 1031.97                     |
+| 1    | GRM Daily          | 1200.56                     |
+| 2    | Nickelodeon        | 1062.67                     |
+| 3    | Disney Channel UK  | 1037.19                     |
 
 
 
@@ -493,11 +462,9 @@ Here are the key questions we need to answer for our marketing client:
 
 | Rank | Channel Name    | Subscriber Engagement Rate  |
 |------|-----------------|---------------------------- |
-| 1    | Mark Ronson     | 343,000                     |
+| 1    | Mark Ronson     | 345,500                     |
 | 2    | Jessie J        | 110,416.67                  |
-| 3    | Dua Lipa        | 104,954.95                  |
-
-
+| 3    | Dua Lipa        | 84,642.86                   |
 
 
 ### Notes
@@ -519,30 +486,30 @@ For this analysis, we'll prioritize analysing the metrics that are important in 
 Campaign idea = product placement 
 
 1. NoCopyrightSounds 
-- Average views per video = 6.92 million
+- Average views per video = 6.43 million
 - Product cost = $5
-- Potential units sold per video = 6.92 million x 2% conversion rate = 138,400 units sold
-- Potential revenue per video = 138,400 x $5 = $692,000
+- Potential units sold per video = 6.43 million x 2% conversion rate = 128,600 units sold
+- Potential revenue per video = 128,600 x $5 = $643,000
 - Campaign cost (one-time fee) = $50,000
-- **Net profit = $692,000 - $50,000 = $642,000**
+- **Net profit = $643,000 - $50,000 = $593,000**
 
 b. DanTDM
 
-- Average views per video = 5.34 million
+- Average views per video = 5.36 million
 - Product cost = $5
-- Potential units sold per video = 5.34 million x 2% conversion rate = 106,800 units sold
-- Potential revenue per video = 106,800 x $5 = $534,000
+- Potential units sold per video = 5.36 million x 2% conversion rate = 107,200 units sold
+- Potential revenue per video = 107,200 x $5 = $536,000
 - Campaign cost (one-time fee) = $50,000
-- **Net profit = $534,000 - $50,000 = $484,000**
+- **Net profit = $536,000 - $50,000 = $486,000**
 
 c. Dan Rhodes
 
-- Average views per video = 11.15 million
+- Average views per video = 11.38 million
 - Product cost = $5
-- Potential units sold per video = 11.15 million x 2% conversion rate = 223,000 units sold
-- Potential revenue per video = 223,000 x $5 = $1,115,000
+- Potential units sold per video = 11.38 million x 2% conversion rate = 227,600 units sold
+- Potential revenue per video = 227,600 x $5 = $1,138,000
 - Campaign cost (one-time fee) = $50,000
-- **Net profit = $1,115,000 - $50,000 = $1,065,000**
+- **Net profit = $1,138,000 - $50,000 = $1,088,000**
 
 
 Best option from category: Dan Rhodes
@@ -601,9 +568,9 @@ ORDER BY
 
 ```
 
-#### Output
+#### Output Matches calculation ✔️
 
-![Most subsc](assets/images/youtubers_with_the_most_subs.png)
+
 
 ### 2. Youtubers with the most videos uploaded
 
