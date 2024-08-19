@@ -23,7 +23,7 @@ using Excel > Python > SQL > Looker Studio
   - [Create the SQL View](#create-the-sql-view)
 - [Testing](#testing)
   - [Data Quality Tests](#data-quality-tests)
-- [Visualization](#visualization)
+- [Visualisation](#visualisation)
   - [Results](#results)
   - [DAX Measures](#dax-measures)
 - [Analysis](#analysis)
@@ -46,7 +46,7 @@ using Excel > Python > SQL > Looker Studio
 
 ## User story 
 
-As the Head of Marketing, I need a dashboard that analyses UK YouTube channel performance. This will help me pinpoint the top channels by metrics like subscriber count and average views, enabling better decisions for influencer partnerships and maximizing campaign impact.
+As the Head of Marketing, I need a dashboard that analyses UK YouTube channel performance. This will help me pinpoint the top channels by metrics like subscriber count and average views, enabling better decisions for influencer partnerships and maximising campaign impact.
 
 
 # Data source 
