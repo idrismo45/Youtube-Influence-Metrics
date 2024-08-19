@@ -530,9 +530,9 @@ Best option from category: Dan Rhodes
 
 
 -- 1. 
-DECLARE @conversionRate FLOAT = 0.02;		-- The conversion rate @ 2%
-DECLARE @productCost FLOAT = 5.0;			-- The product cost @ $5
-DECLARE @campaignCost FLOAT = 50000.0;		-- The campaign cost @ $50,000	
+SET @conversionRate = 0.02;		-- The conversion rate @ 2%
+SET @productCost = 5.0;			-- The product cost @ $5
+SET @campaignCost = 50000.0;		-- The campaign cost @ $50,000	
 
 
 -- 2.  
@@ -568,7 +568,9 @@ ORDER BY
 
 ```
 
-#### Output Matches calculation ✔️
+![Most videos](assets/images/sql_mostsubs.png)
+
+#### Output - numbers match sql results
 
 
 
@@ -606,11 +608,6 @@ b. **Yogscast**
 
 
 Best option from category: Yogscast
-
-#### Output
-
-![Most videos](assets/images/youtubers_with_the_most_videos.png)
-
 
 #### SQL query 
 ```sql
@@ -663,9 +660,12 @@ ORDER BY
     net_profit DESC;
 ```
 
-#### Output
+![Most videos](assets/images/sql_mostviews.png)
 
-![Most videos](assets/images/youtubers_with_the_most_videos.png)
+#### Output - numbers match sql results
+
+
+
 
 
 ### 3.  Youtubers with the most views 
@@ -676,30 +676,33 @@ Campaign idea = Influencer marketing
 
 a. DanTDM
 
-- Average views per video = 5.34 million
+- Average views per video = 5.36 million
 - Product cost = $5
-- Potential units sold per video = 5.34 million x 2% conversion rate = 106,800 units sold
-- Potential revenue per video = 106,800 x $5 = $534,000
+- Potential units sold per video = 5.36 million x 2% conversion rate = 107,200 units sold
+- Potential revenue per video = 107,200 x $5 = $536,000
 - Campaign cost (3-month contract) = $130,000
-- **Net profit = $534,000 - $130,000 = $404,000**
+- **Net profit = $536,000 - $130,000 = $406,000**
+
 
 b. Dan Rhodes
 
-- Average views per video = 11.15 million
+- Average views per video = 11.38 million
 - Product cost = $5
-- Potential units sold per video = 11.15 million x 2% conversion rate = 223,000 units sold
-- Potential revenue per video = 223,000 x $5 = $1,115,000
+- Potential units sold per video = 11.38 million x 2% conversion rate = 227,600 units sold
+- Potential revenue per video = 227,600 x $5 = $1,138,000
 - Campaign cost (3-month contract) = $130,000
-- **Net profit = $1,115,000 - $130,000 = $985,000**
+- **Net profit = $1,138,000 - $130,000 = $1,008,000**
+
 
 c. Mister Max
 
-- Average views per video = 14.06 million
+- Average views per video = 13.98 million
 - Product cost = $5
-- Potential units sold per video = 14.06 million x 2% conversion rate = 281,200 units sold
-- Potential revenue per video = 281,200 x $5 = $1,406,000
+- Potential units sold per video = 13.98 million x 2% conversion rate = 279,600 units sold
+- Potential revenue per video = 279,600 x $5 = $1,398,000
 - Campaign cost (3-month contract) = $130,000
-- **Net profit = $1,406,000 - $130,000 = $1,276,000**
+- **Net profit = $1,398,000 - $130,000 = $1,268,000**
+
 
 Best option from category: Mister Max
 
