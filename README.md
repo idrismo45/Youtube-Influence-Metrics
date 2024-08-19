@@ -340,7 +340,7 @@ HAVING
 
 - What does the dashboard look like?
 
-![GIF of Looker Dashboard](assets/images/ScreenRecording2024-08-18at11.25.37-ezgif.com)
+![GIF of Looker Dashboard](assets/images/ScreenRecording2024-08-18at11.25.37-ezgif.com.gif)
 
 This shows the Top UK Youtubers in 2024 so far. 
 
@@ -469,7 +469,7 @@ Here are the key questions we need to answer for our marketing client:
 
 ### Notes
 
-For this analysis, we'll prioritize analysing the metrics that are important in generating the expected ROI for our marketing client, which are the YouTube channels wuth the most 
+For this analysis, we'll prioritize analysing the metrics that are important in generating the expected ROI for our marketing client, which are the YouTube channels with the most 
 
 - subscribers
 - total views
@@ -597,15 +597,20 @@ b. **Manchester City**
 
 b. **Yogscast**
 
-- Average views per video = 710,000
+- Average views per video = 690,000
 - Product cost = $5
-- Potential units sold per video = 710,000 x 2% conversion rate = 14,200 units sold
-- Potential revenue per video = 14,200 x $5= $71,000
+- Potential units sold per video = 690,000 x 2% conversion rate = 13,800 units sold
+- Potential revenue per video = 13,800 x $5= $69,000
 - Campaign cost (11-videos @ $5,000 each) = $55,000
-- **Net profit = $71,000 - $55,000 = $16,000 (profit)**
+- **Net profit = $69,000 - $55,000 = $14,000 (profit)**
 
 
 Best option from category: Yogscast
+
+#### Output
+
+![Most videos](assets/images/youtubers_with_the_most_videos.png)
+
 
 #### SQL query 
 ```sql
