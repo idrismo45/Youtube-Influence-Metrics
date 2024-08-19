@@ -1,8 +1,3 @@
----
-layout: default
-title: Top UK Youtubers 2024 Project
----
-
 
 **Top UK Youtubers 2024 Project**
 using Excel > Python > SQL > Looker Studio
