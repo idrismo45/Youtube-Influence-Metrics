@@ -1,3 +1,6 @@
 title: Top UK Youtubers 2024 Project
 description: A detailed project on top UK YouTubers using Excel, Python, SQL, and Looker Studio.
 theme: jekyll-theme-cayman
+show_downloads: True
+plugins:
+- jekyll-remote-theme 
