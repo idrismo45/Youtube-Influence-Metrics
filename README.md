@@ -1,7 +1,7 @@
-# Data Portfolio: Excel to Power BI 
+# Data Portfolio: Excel to Looker Studio
 
 
-![excel-to-powerbi-animated-diagram](assets/images/ScreenRecording2024-08-18at11.25.37-ezgif.com-crop.gif)
+(assets/images/ScreenRecording2024-08-18at11.25.37-ezgif.com-crop.gif)
 
 
 
