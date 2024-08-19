@@ -337,7 +337,7 @@ HAVING
 
 - What does the dashboard look like?
 
-![GIF of Looker Dashboard](assets/images/ScreenRecording2024-08-18at11.25.37-ezgif.com.gif)
+![GIF of Looker Dashboard](assets/images/dashboard_png)
 
 This shows the Top UK Youtubers in 2024 so far. 
 
