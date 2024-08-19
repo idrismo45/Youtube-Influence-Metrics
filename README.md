@@ -104,7 +104,9 @@ Some of the data visuals that may be appropriate in answering our questions incl
 
 
 
-![Dashboard-Mockup](assets/images/)
+![Dashboard-Mockup](assets/images/Screenshot 2024-08-17 at 12.59.44.png)
+
+
 
 
 ## Tools 
