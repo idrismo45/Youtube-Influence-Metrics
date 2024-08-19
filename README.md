@@ -1,4 +1,4 @@
-# Excel > Python > SQL > Looker Studio (Top UK Youtubers 2024)
+# (Top UK Youtubers 2024) - Excel > Python > SQL > Looker Studio
 
 
 ![Dashboard View on Looker](assets/images/ScreenRecording2024-08-18at11.25.37-ezgif.com-crop.gif)
@@ -39,28 +39,13 @@
 
 # Objective 
 
-- What is the key pain point? 
+Pain Point: The Head of Marketing needs to identify the top UK YouTubers in 2024 to choose the most effective influencers for upcoming marketing campaigns.
 
-The Head of Marketing wants to find out who the top YouTubers are in 2024 to decide on which YouTubers would be best to run marketing campaigns throughout the rest of the year.
-
-
-- What is the ideal solution? 
-
-To create a dashboard that provides insights into the top UK YouTubers in 2024 that includes their 
-- subscriber count
-- total views
-- total videos, and
-- engagement metrics
-
-This will help the marketing team make informed decisions about which YouTubers to collaborate with for their marketing campaigns.
+Ideal Solution: Develop a dashboard that highlights key metrics such as subscriber count, total views, videos uploaded, and engagement. This tool will empower the marketing team to make data-driven decisions on influencer collaborations.
 
 ## User story 
 
-As the Head of Marketing, I want to use a dashboard that analyses YouTube channel data in the UK . 
-
-This dashboard should allow me to identify the top performing channels based on metrics like subscriber base and average views. 
-
-With this information, I can make more informed decisions about which Youtubers are right to collaborate with, and therefore maximize how effective each marketing campaign is.
+As the Head of Marketing, I need a dashboard that analyses UK YouTube channel performance. This will help me pinpoint the top channels by metrics like subscriber count and average views, enabling better decisions for influencer partnerships and maximizing campaign impact.
 
 
 # Data source 
@@ -119,7 +104,7 @@ Some of the data visuals that may be appropriate in answering our questions incl
 
 
 
-![Dashboard-Mockup](assets/images/dashboard_mockup.png)
+![Dashboard-Mockup](assets/images/)
 
 
 ## Tools 
@@ -142,10 +127,10 @@ Some of the data visuals that may be appropriate in answering our questions incl
 
 1. Get the data
 2. Explore the data in Excel
-3. Load the data into SQL Server
-4. Clean the data with SQL
-5. Test the data with SQL
-6. Visualize the data in Power BI
+3. Use Python API scraping script to fill in missing data
+4. Clean the data with Python then move to SQL
+5. Clean the data on SQL
+6. Visualise the data in Looker Studio
 7. Generate the findings based on the insights
 8. Write the documentation + commentary
 9. Publish the data to GitHub Pages
