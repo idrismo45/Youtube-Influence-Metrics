@@ -568,7 +568,7 @@ ORDER BY
 
 ```
 
-![Most videos](assets/images/sql_mostsubs.png)
+![Most videos](assets/images/most_subs.png)
 
 #### Output - numbers match sql results
 
@@ -760,10 +760,9 @@ ORDER BY
     net_profit DESC;
 
 ```
+![Most videos](assets/images/sql_mostviews.png)
 
-#### Output
-
-![Most views](assets/images/youtubers_with_the_most_views.png)
+#### Output - numbers match sql results
 
 
 
