@@ -760,7 +760,7 @@ ORDER BY
     net_profit DESC;
 
 ```
-![Most videos](assets/images/sql_mostviews.png)
+![Most videos](assets/images/most_view.png)
 
 #### Output - numbers match sql results
 
