@@ -660,7 +660,7 @@ ORDER BY
     net_profit DESC;
 ```
 
-![Most videos](assets/images/sql_mostviews.png)
+![Most videos](assets/images/most_videos.png)
 
 #### Output - numbers match sql results
 
@@ -721,9 +721,9 @@ Best option from category: Mister Max
 
 
 -- 1.
-DECLARE @conversionRate FLOAT = 0.02;        -- The conversion rate @ 2%
-DECLARE @productCost MONEY = 5.0;            -- The product cost @ $5
-DECLARE @campaignCost MONEY = 130000.0;      -- The campaign cost @ $130,000
+SET @conversionRate  = 0.02;        -- The conversion rate @ 2%
+SET @productCost  = 5.0;            -- The product cost @ $5
+SET @campaignCost  = 130000.0;      -- The campaign cost @ $130,000
 
 
 
