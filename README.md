@@ -1,7 +1,8 @@
-# Data Portfolio: Excel to Looker Studio
+# Excel to Looker Studio (Top UK Youtubers 2024)
 
 
-[(assets/images/ScreenRecording2024-08-18at11.25.37-ezgif.com-crop.gif)]
+![Dashboard View on Looker](assets/images/ScreenRecording2024-08-18at11.25.37-ezgif.com-crop.gif)
+
 
 
 
