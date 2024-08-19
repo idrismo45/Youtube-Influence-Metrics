@@ -1,11 +1,8 @@
-# _config.yml
 title: Top UK Youtubers 2024 Project
 description: A detailed project on top UK YouTubers using Excel, Python, SQL, and Looker Studio.
+theme: lanyon
 
-# Use a minimalistic theme
-theme: minima
-
-# Other settings
-show_downloads: false
+# Optional settings
+show_downloads: True
 plugins:
   - jekyll-feed
