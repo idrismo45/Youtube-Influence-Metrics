@@ -1,4 +1,4 @@
-# Top UK Youtubers 2024 Project
+**Top UK Youtubers 2024 Project**
 using Excel > Python > SQL > Looker Studio
 
 
@@ -40,9 +40,9 @@ using Excel > Python > SQL > Looker Studio
 
 # Objective 
 
-Pain Point: The Head of Marketing needs to identify the top UK YouTubers in 2024 to choose the most effective influencers for upcoming marketing campaigns.
+**Pain Point**: The Head of Marketing needs to identify the top UK YouTubers in 2024 to choose the most effective influencers for upcoming marketing campaigns.
 
-Ideal Solution: Develop a dashboard that highlights key metrics such as subscriber count, total views, videos uploaded, and engagement. This tool will empower the marketing team to make data-driven decisions on influencer collaborations.
+**Ideal Solution**: Develop a dashboard that highlights key metrics such as subscriber count, total views, videos uploaded, and engagement. This tool will empower the marketing team to make data-driven decisions on influencer collaborations.
 
 ## User story 
 
