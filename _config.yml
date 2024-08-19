@@ -1,8 +1,12 @@
 title: Top UK Youtubers 2024 Project
 description: A detailed project on top UK YouTubers using Excel, Python, SQL, and Looker Studio.
-theme: lanyon
+theme: jekyll-now
 
 # Optional settings
 show_downloads: True
 plugins:
   - jekyll-feed
+
+# Customise the base URL for your GitHub Pages site
+baseurl: ""
+url: "https://github.com/idrismo45/Top_UK_Youtubers" 
