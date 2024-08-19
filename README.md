@@ -1,5 +1,5 @@
-# (Top UK Youtubers 2024) 
-Excel > Python > SQL > Looker Studio
+# Top UK Youtubers 2024 Project
+using Excel > Python > SQL > Looker Studio
 
 
 ![Dashboard View on Looker](assets/images/ScreenRecording2024-08-18at11.25.37-ezgif.com-crop.gif)
