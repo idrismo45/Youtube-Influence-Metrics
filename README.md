@@ -115,9 +115,10 @@ Some of the data visuals that may be appropriate in answering our questions incl
 
 | Tool | Purpose |
 | --- | --- |
-| Excel | Exploring the data |
-| SQL Server | Cleaning, testing, and analyzing the data |
-| Power BI | Visualizing the data via interactive dashboards |
+| MS Excel | Exploring the data |
+| Python via VS Code | Cleaning and scraping missing data |
+| MySQL Workbench | Further cleaning, testing, and analysing the data |
+| Looker Studio by Google | Visualising the data via interactive dashboards |
 | GitHub | Hosting the project documentation and version control |
 | Mokkup AI | Designing the wireframe/mockup of the dashboard | 
 
@@ -207,13 +208,14 @@ And here is a tabular representation of the expected schema for the clean data:
 
 -- 1.
 SELECT
-    SUBSTRING(NOMBRE, 1, CHARINDEX('@', NOMBRE) -1) AS channel_name,  -- 2.
+    SUBSTRING_INDEX(NOMBRE, '@', 1) AS channel_name,  -- 2.
     total_subscribers,
     total_views,
     total_videos
 
 FROM
-    top_uk_youtubers_2024
+    top_uk_youtubers_2024;
+
 ```
 
 
@@ -222,8 +224,8 @@ FROM
 ```sql
 /*
 # 1. Create a view to store the transformed data
-# 2. Cast the extracted channel name as VARCHAR(100)
-# 3. Select the required columns from the top_uk_youtubers_2024 SQL table 
+# 2. Ensure the extracted channel name is in VARCHAR(100)
+# 3. Select the required columns from the top_uk_youtubers_2024 SQL table
 */
 
 -- 1.
@@ -231,14 +233,14 @@ CREATE VIEW view_uk_youtubers_2024 AS
 
 -- 2.
 SELECT
-    CAST(SUBSTRING(NOMBRE, 1, CHARINDEX('@', NOMBRE) -1) AS VARCHAR(100)) AS channel_name, -- 2. 
+    CAST(SUBSTRING_INDEX(NOMBRE, '@', 1) AS CHAR(100)) AS channel_name, -- 2.
     total_subscribers,
     total_views,
     total_videos
 
 -- 3.
 FROM
-    top_uk_youtubers_2024
+    top_uk_youtubers_2024;
 
 ```
 
@@ -252,7 +254,7 @@ Here are the data quality tests conducted:
 ## Row count check
 ```sql
 /*
-# Count the total number of records (or rows) are in the SQL view
+# Count the total number of records (or rows) in the SQL view
 */
 
 SELECT
@@ -260,9 +262,10 @@ SELECT
 FROM
     view_uk_youtubers_2024;
 
+
 ```
 
-![Row count check](assets/images/1_row_count_check.png)
+**Output** 100 Rows ✔️
 
 
 
@@ -281,9 +284,7 @@ FROM
 WHERE
     TABLE_NAME = 'view_uk_youtubers_2024'
 ```
-### Output 
-![Column count check](assets/images/2_column_count_check.png)
-
+**Output** 4 Columns ✔️
 
 
 ## Data type check
@@ -302,8 +303,7 @@ FROM
 WHERE
     TABLE_NAME = 'view_uk_youtubers_2024';
 ```
-### Output
-![Data type check](assets/images/3_data_type_check.png)
+**Output** channel_name = varchar / total_subs = int / total_views = bigint / total_vids = int
 
 
 ## Duplicate count check
