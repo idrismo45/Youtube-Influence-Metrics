@@ -22,7 +22,6 @@
   - [Data Quality Tests](#data-quality-tests)
 - [Visualisation](#visualisation)
   - [Results](#results)
-  - [Looker Table Calculations](#Looker-Table-Calculations)
 - [Analysis](#analysis)
   - [Findings](#findings)
   - [Validation](#validation)
