@@ -111,7 +111,7 @@ Some of the data visuals that may be appropriate in answering our questions incl
 
 | Tool | Purpose |
 | --- | --- |
-| MS Excel | Exploring the data |
+| Microsoft Excel | Exploring the data |
 | Python via VS Code | Cleaning and scraping missing data |
 | MySQL Workbench | Further cleaning, testing, and analysing the data |
 | Looker Studio by Google | Visualising the data via interactive dashboards |
